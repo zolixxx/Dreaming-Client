@@ -8,7 +8,6 @@ import com.dreaming.client.modules.GuiSettingsModule;
 import com.dreaming.client.setting.BoolSetting;
 import com.dreaming.client.setting.NumSetting;
 import com.dreaming.client.setting.Setting;
-import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
@@ -432,13 +431,13 @@ public class ClickGui extends Screen {
 
     @Override
     public boolean mouseScrolled(double rawX, double rawY, double hAmount, double vAmount) {
-        scrollTarget = MathHelper.clamp(scrollTarget - (float) vAmount * TAB_Hf, 0, maxScroll);
+        scrollTarget = MathHelper.clamp(scrollTarget - (float) vAmount * TAB_H, 0, maxScroll);
         return true;
     }
 
     @Override
     public boolean charTyped(char chr, int modifiers) {
-        if (SharedConstants.isValidChar(chr)) {
+        if ((chr >= 32 && chr != 127 && chr != 167)) {
             search += chr; searchFocus = true;
             scrollTarget = 0; scroll.snap(0);
             return true;
