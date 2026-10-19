@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "dreamingclient",
+  "version": "${version}",
+  "name": "Dreaming Client",
+  "description": "Dreaming Client - a singleplayer-only utility client.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.dreaming.client.DreamingClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
